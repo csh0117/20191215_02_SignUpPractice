@@ -25,6 +25,8 @@ class SignUpActivity : BaseActivity() {
     }
     override fun setupEvent() {
 
+        var selectedBirthDay:Calendar? = null
+
         birthDayTxt.setOnClickListener{
 //            Toast.makeText(mContext, "생일 지정 텍스트뷰 클릭", Toast.LENGTH_SHORT).show()
             val datePickerDialog = DatePickerDialog(mContext, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
@@ -32,10 +34,22 @@ class SignUpActivity : BaseActivity() {
                 val selectedDateStr = "${year} / ${month} / ${dayOfMonth}"
                 birthDayTxt.text = selectedDateStr
 
-            }, 2019, Calendar.DECEMBER, 15)
+                selectedBirthDay?.let {
+                    Log.d("log]생년월일 선택", "이미 선택된 값을 수정 - 다시 선택")
+                } .let {
+                    Log.d("log]생년월일 선택", "선택된 값이 새로 생김 - 처음 선택")
+                    selectedBirthDay = Calendar.getInstance()
+//                    Q. selectedBirthDay 에 담긴 날짜는 몇월 몇일? 2019년 12월 15일 (현재)
+//                    이 담긴 날짜를 => 선택한 년/월/일로 대입.
+                }
+
+//                selectedBirthDay?.set(Calendar.YEAR, year)
+//                selectedBirthDay?.set(Calendar.MONTH, month)
+//                selectedBirthDay?.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                selectedBirthDay?.set(year, month, dayOfMonth)
+            }, 2019, Calendar.DECEMBER, 22)
 //            자바에서는 월을 0~11월로 사용함. 생각하는 것보다 1 작은 숫자를 월로 넣어줘야 함
 //            Calendar 클래스를 사용하면 직관적
-
             datePickerDialog.show()
         }
 
