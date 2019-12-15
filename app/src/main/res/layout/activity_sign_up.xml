@@ -82,6 +82,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:singleLine="true"
                     android:hint="이름을 입력하세요" />
             </LinearLayout>
             <LinearLayout
@@ -135,11 +136,12 @@
                 android:textSize="16sp"
                 android:text="직업" />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:spinnerMode="dropdown" />
-
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:entries="@array/jobs"
+                    android:spinnerMode="dialog" />
 
             <Button
                 android:layout_width="match_parent"
