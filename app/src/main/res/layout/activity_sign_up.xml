@@ -47,7 +47,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_marginTop="5dp"
-                    android:visibility="gone"
                     android:textColor="#FF0000"
                     android:text="사용해도 좋은 비밀번호 입니다." />
             </LinearLayout>
