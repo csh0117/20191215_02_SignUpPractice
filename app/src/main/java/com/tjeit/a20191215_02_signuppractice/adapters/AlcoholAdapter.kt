@@ -37,7 +37,7 @@ class AlcoholAdapter(context:Context, resId:Int, list:ArrayList<Alcohol>) : Arra
         var tempRow = convertView
         tempRow?.let {
         }.let {
-            tempRow = inf.inflate(R.layout.alcohol_spinner_list_item,null)
+            tempRow = inf.inflate(R.layout.alcohol_spinner_dropdown_list_item,null)
         }
 
         val row = tempRow!!
