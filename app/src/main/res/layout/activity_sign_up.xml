@@ -118,7 +118,7 @@
                     android:textSize="20dp"
                     android:text="생년월일" />
                 <TextView
-                    android:id="@+id/bitthTimeTxt"
+                    android:id="@+id/birthTimeTxt"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
