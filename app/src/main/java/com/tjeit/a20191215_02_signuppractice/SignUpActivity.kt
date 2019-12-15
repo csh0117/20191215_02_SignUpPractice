@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
@@ -16,6 +18,7 @@ import java.util.*
 import kotlin.math.log
 
 class SignUpActivity : BaseActivity() {
+    var selectedBirthDay:Calendar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +29,20 @@ class SignUpActivity : BaseActivity() {
     override fun setValue() {
     }
     override fun setupEvent() {
-
-        var selectedBirthDay:Calendar? = null
+        jobSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if (position != 0) {
+                    Toast.makeText(mContext, jobSpinner.selectedItem.toString(), Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
 
         birthDayTxt.setOnClickListener{
 //            Toast.makeText(mContext, "생일 지정 텍스트뷰 클릭", Toast.LENGTH_SHORT).show()
