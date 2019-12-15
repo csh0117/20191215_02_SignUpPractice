@@ -132,18 +132,27 @@
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textSize="16sp"
                 android:text="직업" />
-
                 <Spinner
                     android:id="@+id/jobSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:entries="@array/jobs"
+                    android:spinnerMode="dialog" />
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:text="좋아하는 술" />
+                <Spinner
+                    android:id="@+id/drinkSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:spinnerMode="dialog" />
 
             <Button
