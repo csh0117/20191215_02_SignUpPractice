@@ -36,11 +36,13 @@
                     android:textSize="16sp"
                     android:text="Password" />
                 <EditText
+                    android:id="@+id/pwEdt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:hint="비밀번호를 입력하세요 (8글자 이상)" />
                 <TextView
+                    android:id="@+id/pwStatusTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
